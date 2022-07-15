@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Flexbox</title>
+    <link rel="stylesheet" href="style/style.css">
+    <!-- Font Awesome Link -->
+    <script src="https://kit.fontawesome.com/07264ff599.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+<body>
+
+    <!-- ------------
+        -------------Top Bar  -->
+    <div class="hero-nav">
+        <div class="logo">
+            <img src="img/footer-logo.png" alt="">
+        </div>
+        <div class="top-menu">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Home</a></li>
+                <li><a href="">Home</a></li>
+                <li><a href="">Home</a></li>
+            </ul>
+        </div>
+        <div class="search">
+            <input type="search">
+            <div><button>SEARCH</button></div>
+        </div>
+    </div>
+
+    <!-- Left Menu Bar -->
+    <div class="box">
+        <div class="product left-side">
+            <nav class="left-menu">
+                <ul>
+                    <li>Setting-1</li>
+                    <li>Setting-2</li>
+                    <li>Setting-3</li>
+                    <li>Setting-4</li>
+                    <li>Setting-5</li>
+                    <li>Setting-6</li>
+                    <li>Setting-7</li>
+                    <li>Setting-8</li>
+                    <li>Setting-9</li>
+                    <li>Setting-10</li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Right Side Content-->
+        <div class="product right-side">
+            <div class="title-bar">
+                <div class="left-title">
+                    <h2>Welcome back, Chris!</h2>
+                    <p>You have 12 new messages and 7 new notifications.</p>
+                </div>
+                <div class="right-title">
+                    <h4>12/03/2022 - 11/03/2022</h4>
+                </div>
+            </div>
+
+            <!-- Detail Box flex -->
+            <div class="detail-box">
+                <div class="d-box box-1">
+                    <div class="detail">
+                        <h2>Box-1</h2>
+                        <p>Get more idea</p>
+                    </div>
+                </div>
+                <div class="d-box box-2">
+                    <div class="detail">
+                        <H2>Box-1</H2>
+                        <p>Get more idea</p>
+                    </div>
+                </div>
+                <div class="d-box box-3">
+                    <div class="detail">
+                        <H2>Box-1</H2>
+                        <p>Get more idea</p>
+                    </div>
+                </div>
+                <div class="d-box box-4">
+                    <div class="detail">
+                        <H2>Box-1</H2>
+                        <p>Get more idea</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Detail Marking Grid -->
+            <div class="grid-flex">
+                <div class="grid-box">
+                    <!-- Grid Box-1 -->
+                    <div class="grid-1 grid">
+                        <h1>Total Transection</h1>
+                        <hr>
+                        <div class="mark-title">
+                            <div class="text-mark">
+                                <h6>Total Order</h6>
+                                <h6>Total Sales</h6>
+                            </div>
+                            <div class="icon-mark">
+                                <i class="fa-solid fa-plus"></i>
+                                <i class="fa-solid fa-minus"></i>
+                                <i class="fa-solid fa-magnifying-glass-plus"></i>
+                                <i class="fa-solid fa-hand"></i>
+                                <i class="fa-solid fa-house"></i>
+                                <div class="chart-menu-bar">
+                                    <i class="fa-solid fa-bars"></i>
+                                    <div class="chart-menu">
+                                        <ul>
+                                            <li>Downlode Png</li>
+                                            <li>Downlode Png</li>
+                                            <li>Downlode Png</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="chart">
+                                <canvas id="myChart"></canvas>
+                            </div>
+                        
+                    </div>
+
+                    <!-- Grid Box-2 -->
+                    <div class="grid-2 grid">Grid-2</div>
+                    <div class="grid-3 grid">Grid-3</div>
+                    <div class="grid-4 grid">Grid-4</div>
+                    <div class="grid-5 grid">Grid-5</div>
+                    <div class="grid-6 grid">Grid-6</div>
+                    <div class="grid-7 grid">Grid-7</div>
+                </div>
+            </div>
+
+            <footer class="footer">
+                <div class="copyright">
+                    <h6><small>© 2022 ThemeMakker, All Rights Reserved.</small></h6>
+                </div>
+                <div class="footer-logo">
+                    <h1>Made By Sukanto</h1>
+                </div>
+                <div class="footer-menu">
+                    <ul>
+                        <li>Portfolio</li>
+                        <li>lichance</li>
+                        <li>Document</li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+        
+    </div>
+
+    <!-- JS Script All -->
+    <script>
+        var xyValues = [
+          {x:50, y:7},
+          {x:60, y:8},
+          {x:70, y:8},
+          {x:80, y:9},
+          {x:90, y:9},
+          {x:100, y:9},
+          {x:110, y:10},
+          {x:120, y:11},
+          {x:130, y:14},
+          {x:140, y:14},
+          {x:150, y:15}
+        ];
+        
+        new Chart("myChart", {
+          type: "scatter",
+          data: {
+            datasets: [{
+              pointRadius: 4,
+              pointBackgroundColor: "rgb(0,0,255)",
+              data: xyValues
+            }]
+          },
+          options: {
+            legend: {display: false},
+            scales: {
+              xAxes: [{ticks: {min: 40, max:160}}],
+              yAxes: [{ticks: {min: 6, max:16}}],
+            }
+          }
+        });
+        </script>
+</body>
+</html>
